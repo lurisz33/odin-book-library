@@ -1,0 +1,108 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 15%;
+    background-color: #daedf4;
+    color: black;
+    font-size: 40px;
+    font-weight: 600;
+}
+
+.bookshelf {
+    width: 100vw;
+    height: 85%;
+    background-color: #daedf4;
+}
+
+.bookshelf-container {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(200px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+}
+
+.header p {
+    margin-bottom: 10px;
+}
+
+dialog {
+    text-align: left;
+    padding: 20px;
+}
+
+dialog label{
+    font-size: 0.8em;
+    font-weight: 600;
+}
+
+#bookForm {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.8em;
+    gap: 15px;
+}
+
+.form-group input {
+    height: 1.5em;
+}
+
+.action-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: 15px;
+}
+
+#addBookButton:hover {
+    background-color: lightgreen;
+}
+
+#closeDialogButton:hover {
+    background-color: indianred;
+}
+
+#open-dialog-button:hover {
+    transform: scale(1.05);
+}
+
+
+.book {
+    background-color: #f0f0f0;
+    padding: 1rem;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    font-size: 20px;
+}
+
+.bold {
+    font-weight: 600;
+}
+
+input[type="checkbox"] {
+    height: 3em;
+}
+
+input[type="checkbox"]:hover {
+    transform: scale(1.5);
+}
+

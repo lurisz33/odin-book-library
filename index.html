@@ -7,6 +7,42 @@
     <script src="scripts.js" defer></script>
 </head>
 <body>
-
+    <div class="header">
+        <p>My Bookshelf</p>
+        <img src="./assets/icons/add-book.svg" height="40px" width="40px" alt="add-book-icon" id="open-dialog-button">
+        <dialog>
+            <form id="bookForm">
+                <div class="form-group">
+                    <label for="title">Title:</label>
+                    <input type="text" id="title" name="title">
+                </div>
+                <div class="form-group">
+                    <label for="author">Author:</label>
+                    <input type="text" id="author" name="author">
+                </div>
+                <div class="form-group">
+                    <label for="numberOfPages">Number of pages:</label>
+                    <input type="number" id="numberOfPages" name="numberOfPages">
+                </div>
+                <div class="form-group" id="pagesRead-container">
+                    <label for="pagesRead">Pages read:</label>
+                    <input type="number" id="pagesRead" name="pagesRead">
+                </div>
+                <div class="form-group">
+                    <label for="read">Read:</label>
+                    <input type="checkbox" id="read" name="read">
+                </div>
+                <div class="action-buttons">
+                    <button type="button" id="addBookButton">Add Book</button>
+                    <button type="button" id="closeDialogButton">Cancel</button>
+                </div>
+            </form>
+        </dialog>
+    </div>
+    <div class="bookshelf">
+        <div class="bookshelf-container" id="bookshelfContainer">
+            <!-- Books will be shown here -->
+        </div>
+    </div>
 </body>
 </html>
