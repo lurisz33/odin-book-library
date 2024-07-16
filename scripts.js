@@ -11,6 +11,11 @@ document.addEventListener("DOMContentLoaded", function() {
 
     openDialogButton.addEventListener("click", () => {
         dialog.showModal();
+        if (readCheckbox.checked) {
+            pagesReadContainer.style.display = "none";
+        } else {
+            pagesReadContainer.style.display = "flex";
+        }
     });
 
     closeDialogButton.addEventListener("click", () => {
@@ -71,9 +76,19 @@ document.addEventListener("DOMContentLoaded", function() {
             bookDiv.appendChild(pagesP);
 
             const readP = document.createElement("p");
-            readP.innerHTML = `Completed: <span class="bold">${book.read}</span>`;
-            bookDiv.appendChild(readP);
+            const progressBar = document.createElement("progress");
+            progressBar.max = book.numberOfPages;
 
+            if (book.read === "Yes") {
+                progressBar.value = book.numberOfPages;
+                readP.innerHTML = `Progress: ${progressBar.outerHTML} Completed`;
+            } else {
+                progressBar.value = book.pagesRead;
+                const percentageRead = Math.min(100, Math.round((book.pagesRead / book.numberOfPages) * 100));
+                readP.innerHTML = `Progress: ${progressBar.outerHTML} ${percentageRead}%`;
+            }
+
+            bookDiv.appendChild(readP);
             bookshelfContainer.appendChild(bookDiv);
         });
     }

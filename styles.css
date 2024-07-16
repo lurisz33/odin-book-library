@@ -106,3 +106,16 @@ input[type="checkbox"]:hover {
     transform: scale(1.5);
 }
 
+.progress-bar {
+    width: 100vw;
+    background: #04af2f;
+}
+
+.incomplete {
+    background-color: #f1f1f1;
+}
+
+.complete {
+    background-color: #4CAF50;
+}
+
