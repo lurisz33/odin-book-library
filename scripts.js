@@ -78,21 +78,34 @@ document.addEventListener("DOMContentLoaded", function() {
             const readP = document.createElement("p");
             const progressBar = document.createElement("progress");
             progressBar.max = book.numberOfPages;
+            const percentageRead = Math.min(100, Math.round((book.pagesRead / book.numberOfPages) * 100));
 
-            if (book.read === "Yes") {
+            if (book.read === "Yes" || percentageRead === 100) {
                 progressBar.value = book.numberOfPages;
-                readP.innerHTML = `Progress: ${progressBar.outerHTML} Completed`;
+                readP.innerHTML = `Progress: ${progressBar.outerHTML} <span class="bold">Completed</span>`;
             } else {
                 progressBar.value = book.pagesRead;
-                const percentageRead = Math.min(100, Math.round((book.pagesRead / book.numberOfPages) * 100));
                 readP.innerHTML = `Progress: ${progressBar.outerHTML} ${percentageRead}%`;
             }
-
             bookDiv.appendChild(readP);
+
+            const delB = document.createElement("button");
+            delB.id = book.id;
+            delB.innerHTML = `Delete book`;
+            delB.addEventListener("click", function () {
+                deleteBook(book.id);
+            })
+            delB.classList.add("delete-button");
+            bookDiv.appendChild(delB);
+
             bookshelfContainer.appendChild(bookDiv);
         });
     }
 
+    function deleteBook(bookId) {
+        bookLibrary = bookLibrary.filter(book => book.id !== bookId);
+        refreshLibrary();
+    }
 
     class Book {
         constructor(author, title, numberOfPages, read, id, pagesRead) {

@@ -84,6 +84,9 @@ dialog label{
     transform: scale(1.05);
 }
 
+.delete-button:hover {
+    background-color: indianred;
+}
 
 .book {
     background-color: #f0f0f0;
