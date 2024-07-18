@@ -10,5 +10,5 @@ You can check out a live demo of the application [https://lurisz33.github.io/odi
 
 - Add books with details like title, author, number of pages, and reading status.
 - Track reading progress with a progress bar.
-- Edit or delete book entries.
+- Delete book entries.
 - Responsive and intuitive UI design.
